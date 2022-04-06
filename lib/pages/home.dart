@@ -26,11 +26,26 @@ class HomeView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(),
-              Padding(
-                padding: const EdgeInsets.all(64),
-                child: Image.asset('images/seccomp_white.png'),
+              Column(
+                children: const [
+                  Text(
+                    'PraJá',
+                    style: TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xffFFD000),
+                    ),
+                  ),
+                  Text(
+                    'Delivery de bebidas',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Color(0xffFFFFFF),
+                    ),
+                  )
+                ],
               ),
-              BarComponent(),
+              const BarComponent(),
             ],
           ),
         ),
