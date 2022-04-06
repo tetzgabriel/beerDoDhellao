@@ -1,3 +1,4 @@
+import 'package:beer_do_dhellao/widgets/organisms/form.dart';
 import 'package:flutter/material.dart';
 import '../widgets/molecules/app_bar.dart';
 
@@ -32,6 +33,7 @@ class LoginView extends StatelessWidget {
                 ),
               ),
             ),
+            LoginFormComponent(),
           ],
         ),
       ),

@@ -24,29 +24,6 @@ class BarView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          ButtonTheme(
-            height: 50,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .push<void>(createSlideRoute(const LoginPage()));
-              },
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  side: const BorderSide(
-                    width: 2,
-                  ),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                primary: Colors.white,
-                minimumSize: const Size(170, 60),
-              ),
-              child: const Text(
-                'LOGIN',
-                style: TextStyle(color: Colors.black, fontSize: 18),
-              ),
-            ),
-          ),
           ElevatedButton(
             onPressed: () {
               Navigator.of(context)
@@ -56,12 +33,30 @@ class BarView extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
-              primary: Colors.black,
+              primary: const Color(0xffFFD000),
               minimumSize: const Size(170, 60),
             ),
             child: const Text(
-              'CADASTRAR',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              'Login',
+              style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push<void>(createSlideRoute(const LoginPage()));
+            },
+            style: ElevatedButton.styleFrom(
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              primary: const Color(0xffffffff),
+              minimumSize: const Size(170, 60),
+            ),
+            child: const Text(
+              'Cadastre-se',
+              style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ),
         ],
