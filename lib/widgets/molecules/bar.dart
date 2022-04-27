@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../pages/login_page.dart';
-import '../../pages/routes.dart';
+import '../../animations/routes.dart';
 
 class BarComponent extends StatelessWidget {
   const BarComponent({Key? key}) : super(key: key);

@@ -32,6 +32,11 @@ class _LoginFormState extends State<LoginFormComponent> {
             padding: const EdgeInsets.only(top: 24, left: 32, right: 24),
             child: Stack(
               children: [
+                inputField(
+                  hintText: 'senha',
+                  errorMessage: 'Por favor, digite sua senha',
+                  isPassword: true,
+                ),
                 SizedBox(
                   height: 60,
                   child: Align(
@@ -39,30 +44,24 @@ class _LoginFormState extends State<LoginFormComponent> {
                     child: Padding(
                       padding: const EdgeInsets.only(right: 16),
                       child: GestureDetector(
-                        onTap: () {changeIcon(passwordIcon);},
+                        onTap: () {
+                          changeIcon(passwordIcon);
+                        },
                         child: passwordIcon,
                       ),
                     ),
                   ),
                 ),
-                inputField(
-                  hintText: 'senha',
-                  errorMessage: 'Por favor, digite sua senha',
-                  isPassword: true,
-                ),
               ],
             ),
           ),
-          GestureDetector(
-            onTap: () {changeIcon(passwordIcon);},
-            child: const Padding(
-              padding: EdgeInsets.only(top: 16),
-              child: Text(
-                'esqueci a senha',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+          const Padding(
+            padding: EdgeInsets.only(top: 16),
+            child: Text(
+              'esqueci a senha',
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),
@@ -80,12 +79,15 @@ class _LoginFormState extends State<LoginFormComponent> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
-                primary: Colors.black,
+                primary: const Color(0xffFFD000),
                 minimumSize: const Size(double.infinity, 60),
               ),
               child: const Text(
                 'ENTRAR',
-                style: TextStyle(color: Colors.white, fontSize: 18),
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -101,6 +103,7 @@ class _LoginFormState extends State<LoginFormComponent> {
   }) {
     return TextFormField(
       decoration: InputDecoration(
+        // suffixIcon: ,
         enabledBorder: inputBorder(const Color(0xFF000000), 2),
         focusedBorder: inputBorder(const Color(0xFF000000), 3),
         errorBorder: inputBorder(const Color(0xFFF44336), 2),
@@ -139,7 +142,6 @@ class _LoginFormState extends State<LoginFormComponent> {
       this.passwordIcon = const Icon(Icons.remove_red_eye_outlined);
     }
 
-    setState(() {
-    });
+    setState(() {});
   }
 }
